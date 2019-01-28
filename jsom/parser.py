@@ -35,15 +35,18 @@ object_item: string ":" value     -> object_item
            | string ":"           -> object_item_empty
            | identifier ":"       -> object_item_empty
 
-string: /"(\\\"|\\\\|[^"\n])*?"i?/ -> dqstring
-      | /'(\\\'|\\\\|[^'\n])*?'i?/ -> sqstring
+string: /"(\\\"|\\\\|[^"])*?"i?/ -> dqstring
+      | /'(\\\'|\\\\|[^'])*?'i?/ -> sqstring
 
 identifier: IDENTIFIER
 IDENTIFIER:/(\w|[-_.])+/
 
+STRAY_BACKSLASH: "\\" 
+
 %import common.SIGNED_NUMBER -> NUMBER
 %import common.WS
 %ignore WS
+%ignore STRAY_BACKSLASH
 """
 
 
@@ -65,7 +68,7 @@ class _JsomTransformer(Transformer):
     @staticmethod
     @v_args(inline=True)
     def dqstring(token: Token) -> str:
-        return literal_eval(token.replace(r'\/', '/'))
+        return literal_eval(token.replace(r'\/', '/').replace('\n', r'\n'))
 
     object_item = tuple
 

@@ -25,6 +25,12 @@
 
 By default, it will warn you whenever it sees one of those, but still parse it.
 
+It also doesn't give a shit about:
+* Newlines in strings
+* Stray backslashes
+
+You will never get warned about those. ¯\\\_(ツ)\_/¯
+
 Warnings are annoying, though, and to make matters worse, they slow the 
 parser down - so just pass in the list of warnings you want `jsom` to be quiet
 about in the `ignore_warnings` parameter:
