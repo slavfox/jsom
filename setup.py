@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="jsom",
-    version="0.0.1",
+    version="0.0.2",
     author="Slavfox",
     author_email="slavfoxman@gmail.com",
     description="A fast, simple parser for terribly broken JSON",

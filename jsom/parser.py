@@ -39,7 +39,7 @@ string: /"(\\\"|\\\\|[^"\n])*?"i?/ -> dqstring
       | /'(\\\'|\\\\|[^'\n])*?'i?/ -> sqstring
 
 identifier: IDENTIFIER
-IDENTIFIER:/\w+/
+IDENTIFIER:/[\w-_.]+/
 
 %import common.SIGNED_NUMBER -> NUMBER
 %import common.WS
