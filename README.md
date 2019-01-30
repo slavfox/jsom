@@ -1,5 +1,7 @@
 # JSOM - not quite JSON, but close enough
 
+![](https://img.shields.io/pypi/pyversions/jsom.svg?style=flat) ![](https://img.shields.io/pypi/v/jsom.svg?style=flat-square) ![](https://img.shields.io/pypi/dd/jsom.svg?style=flat-square) ![](https://img.shields.io/github/license/slavfox/jsom.svg?style=flat-square) 
+
 `jsom` is a simple and quick Python 3.7+ parser for terribly broken JSON.
 
 ## Installation
